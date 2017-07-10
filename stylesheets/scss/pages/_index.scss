@@ -1,0 +1,63 @@
+.page-landing {
+    @include media(768px) {
+        @include outer-container(100%);
+    }
+
+    &__left {
+        background-image: url('../../../img/bg@2x.jpg');
+        background-size: cover;
+        @include media(768px) {
+            @include span-columns(6.5, block-collapse);
+            height: 100vh;
+        }
+
+        &__row {
+            height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        &__item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__right {
+        @include media(768px) {
+            @include span-columns(5.5);
+            height: 100vh;
+            padding: 30px;
+        }
+        &__container {
+            background-color: #F7F7F7;
+            height: 100%;
+            border-radius: 10px;
+        }
+    }
+}
+
+.text__item {
+    color: #ffffff;
+    padding-left: 30px;
+    padding-right: 30px;
+    &__letter {
+        font-size: 152px;
+        text-align: center;
+        color: #ffffff;
+    }
+    &__caption {
+        font-size: 32px;
+        color: #ffffff;
+    }
+    
+    &__year {
+        font-size: 18px;
+        color: #ffffff;
+        margin-top: 30px;
+        text-align: center;
+    }
+}

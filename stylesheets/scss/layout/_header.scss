@@ -1,0 +1,24 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include media(768px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    &__item {
+        &__link {
+            font-size: 16px;
+            color: #ffffff;
+            display: block;
+            padding: 15px 30px;
+            text-decoration: none;
+            &:after {
+                position: absolute;
+            }
+        }
+    }
+}
