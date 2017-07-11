@@ -31,11 +31,10 @@
             @include span-columns(5.5);
             height: 100vh;
             padding: 30px;
+            overflow: scroll;
         }
         &__container {
-            background-color: #F7F7F7;
-            height: 100%;
-            border-radius: 10px;
+            height: 100%;    
         }
     }
 }
@@ -53,11 +52,48 @@
         font-size: 32px;
         color: #ffffff;
     }
-    
+
     &__year {
         font-size: 18px;
         color: #ffffff;
         margin-top: 30px;
         text-align: center;
+    }
+}
+
+.twitter-feeds__item {
+    display: flex;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    background-color: #F7F7F7;
+    &__image {
+        width: 80px;
+        margin-right: 15px;
+        img {
+            width: 100%;
+        }
+    }
+
+    &__content {
+        &__row {
+            padding-bottom: 5px;
+            &:first-child {
+                margin-bottom: 8px;
+            }
+        }
+        &__name {
+            font-weight: $font-medium;
+            font-size: 14px;
+            color: #707070;
+        }
+        &__handle {
+            font-size: 14px;
+            color: #878787;
+        }
+        &__text {
+            line-height: 1.5;
+            letter-spacing: 0.4px;
+            color: #707070;
+        }
     }
 }
