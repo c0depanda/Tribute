@@ -1,6 +1,4 @@
 function handleTweets(tweets) {
-
-    console.log(tweets);
     var x = tweets.length;
     var n = 0;
     var element = document.getElementById('twitter-feeds');
@@ -8,7 +6,6 @@ function handleTweets(tweets) {
     while(n < x) {
         el = document.createElement('p');
         el.innerHTML = tweets[n];
-        console.log(tweets[n], n);
         html += '<div class="twitter-feeds__item">';
         html += '<!-- twitter feeds item image -->' +
             '<div class="twitter-feeds__item__image">' +
