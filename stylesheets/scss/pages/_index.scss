@@ -99,6 +99,13 @@
             line-height: 1.5;
             letter-spacing: 0.4px;
             color: #707070;
+            a {
+                color: #380070;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    color: darken(#380070, 14%);
+                }
+            }
         }
     }
 }
