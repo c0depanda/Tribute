@@ -35,17 +35,12 @@
                         <!-- navbar item -->
                         <div class="navbar__item">
                             <!-- navbar item link -->
-                            <a href="" class="navbar__item__link">About</a>
+                            <a href="https://imogie.bitbucket.io/" target="_blank" class="navbar__item__link">About</a>
                         </div>
                         <!-- navbar item -->
                         <div class="navbar__item">
                             <!-- navbar item link -->
-                            <a href="" class="navbar__item__link">Foundation</a>
-                        </div>
-                        <!-- navbar item -->
-                        <div class="navbar__item">
-                            <!-- navbar item link -->
-                            <a href="" class="navbar__item__link">Works</a>
+                            <a href="http://imogiemubarak.com/" target="_blank" class="navbar__item__link">Works</a>
                         </div>
                     </nav>
 
@@ -77,7 +72,7 @@
                 <!-- Page landing right -->
                 <div class="page-landing__right">
                     <div class="page-landing__right__container">
-                    <p id="example1"></p>
+                        <p id="example1"></p>
                         <!-- Twitter feeds -->
                         <div class="twitter-feeds" id="twitter-feeds">
 
@@ -87,29 +82,66 @@
             </section>
         </main>
 
-
-        <!-- Bootstrap core JavaScript
-================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="js/ie10-viewport-bug-workaround.js"></script>
         <script src="js/twitterFetcher.min.js"></script>
-        <script src="js/custom.js"></script>
 
         <script type="text/javascript">
+            //IE10 viewport hack for Surface/desktop Windows 8 bug
+            (function () {
+                'use strict';
+                if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                    var msViewportStyle = document.createElement('style')
+                    msViewportStyle.appendChild(
+                        document.createTextNode(
+                            '@-ms-viewport{width:auto!important}'
+                        )
+                    )
+                    document.querySelector('head').appendChild(msViewportStyle)
+                }
+            })();
+
+            // Function to handle tweet display
+            function handleTweets(tweets) {
+                var x = tweets.length;
+                var n = 0;
+                var element = document.getElementById('twitter-feeds');
+                var html = '';
+                while(n < x) {
+                    el = document.createElement('p');
+                    el.innerHTML = tweets[n];
+                    html += '<div class="twitter-feeds__item">';
+                    html += '<!-- twitter feeds item image -->' +
+                        '<div class="twitter-feeds__item__image">' +
+                        '<img src="'+ el.querySelector('img').getAttribute("src") +'" alt="Twitter Avatar" class="img-circle" >' +
+                        '</div>' +
+                        '<!-- twitter feeds item content -->' +
+                        '<div class="twitter-feeds__item__content">' +
+                        '<div class="twitter-feeds__item__content__row">' +
+                        '<span class="twitter-feeds__item__content__name">' + el.querySelector('[data-scribe="element:name"]').innerHTML + '</span>' +
+                        '<span class="twitter-feeds__item__content__handle">'+ el.querySelector('[data-scribe="element:screen_name"]').innerHTML + '</span>' +
+                        '</div>' +
+                        '<div class="twitter-feeds__item__content__row">' +
+                        '<p class="twitter-feeds__item__content__text">'+ el.querySelector('p.tweet').innerHTML +'</p>'+
+                        '</div>';
+                    '</div>';
+                    html += '</div></div>';
+                    n++;
+                }
+                element.innerHTML = html;
+            }
+
             var configProfile = {
-              "id": '884922592532025345',
-              "domId": '',
-              "maxTweets": 50,
-              "enableLinks": true,
-              "showInteraction": false,
-              "showUser": true,
-              "showTime": false,
-              "showImages": false,
-              "lang": 'en',
-              "customCallback": handleTweets,
+                "id": '884922592532025345',
+                "domId": '',
+                "maxTweets": 50,
+                "enableLinks": true,
+                "showInteraction": false,
+                "showUser": true,
+                "showTime": false,
+                "showImages": false,
+                "lang": 'en',
+                "customCallback": handleTweets,
             };
             twitterFetcher.fetch(configProfile);
         </script>
