@@ -6,17 +6,21 @@
     &__left {
         background-image: url('../../../img/bg@2x.jpg');
         background-size: cover;
+        background-position: center;
         @include media(768px) {
             @include span-columns(6.5, block-collapse);
             height: 100vh;
         }
 
         &__row {
-            height: calc(100vh - 70px);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            height: 400px;
+            @include media(768px) {
+                height: calc(100vh - 70px);
+            }
         }
 
         &__item {
@@ -27,6 +31,7 @@
     }
 
     &__right {
+        padding: 20px 15px;
         @include media(768px) {
             @include span-columns(5.5);
             height: 100vh;
@@ -44,20 +49,46 @@
     padding-left: 30px;
     padding-right: 30px;
     &__letter {
-        font-size: 152px;
+        font-size: 70px;
         text-align: center;
         color: #ffffff;
+
+        @include media(768px) {
+            font-size: 130px;
+        }
+
+        @include media(992px) {
+            font-size: 152px;
+        }
+
+        @include media(1200px) {
+            font-size: 152px;
+        }
     }
     &__caption {
-        font-size: 32px;
+        font-size: 16px;
         color: #ffffff;
+        @include media(768px) {
+            font-size: 24px;
+        }
+
+        @include media(992px) {
+            font-size: 32px;
+        }
+
+        @include media(1200px) {
+            font-size: 32px;
+        }
     }
 
     &__year {
-        font-size: 18px;
+        font-size: 16px;
         color: #ffffff;
         margin-top: 30px;
         text-align: center;
+        @include media(768px) {
+            font-size: 16px;
+        }
     }
 }
 
@@ -68,10 +99,14 @@
     &__image {
         display: inline-block;
         vertical-align: top;
-        width: 50px;
+        width: 30px;
         margin-right: 15px;
         img {
             width: 100%;
+        }
+        
+        @include media(768px) {
+            width: 50px;
         }
     }
 
@@ -79,6 +114,7 @@
         display: inline-block;
         vertical-align: middle;
         width: calc(100% - 70px);
+        word-wrap: break-word;
         &__row {
             padding-bottom: 5px;
             &:first-child {
