@@ -46,8 +46,12 @@
 
 .text__item {
     color: #ffffff;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include media(768px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
     &__letter {
         font-size: 70px;
         text-align: center;
@@ -104,7 +108,7 @@
         img {
             width: 100%;
         }
-        
+
         @include media(768px) {
             width: 50px;
         }
@@ -123,18 +127,28 @@
         }
         &__name {
             font-weight: $font-medium;
-            font-size: 14px;
+            font-size: 13px;
             color: #707070;
-            padding-right: 10px;
+            padding-right: 5px;
+            @include media(768px) {
+                font-size: 14px;
+            }
         }
         &__handle {
-            font-size: 14px;
+            font-size: 12px;
             color: #878787;
+            @include media(768px) {
+                font-size: 14px;
+            }
         }
         &__text {
             line-height: 1.5;
             letter-spacing: 0.4px;
             color: #707070;
+            font-size: 13px;
+            @include media(768px) {
+                font-size: 14px;
+            }
             a {
                 color: #380070;
                 transition: all 0.3s ease-in-out;
