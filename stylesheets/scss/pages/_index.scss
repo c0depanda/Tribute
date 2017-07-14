@@ -152,8 +152,10 @@
             a {
                 color: #380070;
                 transition: all 0.3s ease-in-out;
+                text-decoration: none;
                 &:hover {
                     color: darken(#380070, 14%);
+                    text-decoration: none;
                 }
             }
         }
